@@ -1,17 +1,17 @@
-#!usr/bin/python3
-"""
-counting minimum number of operations
-"""
+#!/usr/bin/python3
+
 
 def minOperations(n):
+    if n <= 1:
+        return 0
+    
     operations = 0
-    while True:
-        if n <= 1:
-            break
-        n *= 2
-        operations += 1
+    factor = 2
+    
     while n > 1:
-        n -= 1
-        operations += 1
-
+        while n % factor == 0:
+            operations += factor
+            n //= factor
+        factor += 1
+    
     return operations
