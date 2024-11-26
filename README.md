@@ -1,1 +1,1 @@
-# alx-interview
+making change greedy algorithm
